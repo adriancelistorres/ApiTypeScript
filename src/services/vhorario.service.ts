@@ -13,7 +13,6 @@ class VhorarioDocenteService {
     });
     return respuesta;
   }
-
  
 }
 

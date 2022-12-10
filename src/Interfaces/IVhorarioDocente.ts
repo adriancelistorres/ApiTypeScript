@@ -5,7 +5,6 @@ export interface Ihoradocente {
     hora_inicio: number|undefined|any;
     hora_fin: number|undefined|any;
 
-    
   }
 
 

@@ -3,13 +3,13 @@ import { VhorarioDocente } from "../entities/VhorarioDocente";
 import {
  Ihoradocente
 } from "../Interfaces/IVhorarioDocente";
-import CountriesService from "../services/countries.services";
+import VhorarioDocenteService from "../services/vhorario.service";
 
-class CountriesController{
+class vhorariocontroller{
 
 public async getHorarioDocente  (req: Request, res: Response) {
   try {
-    const service = new CountriesService();
+    const service = new VhorarioDocenteService();
     const result=await service.getServiceVhorarioDocente()
     return res.json(result);
   } catch (error) {
@@ -19,7 +19,11 @@ public async getHorarioDocente  (req: Request, res: Response) {
   }
 };
 
+public async putLogin(){
 
 }
 
-export default CountriesController;
+
+}
+
+export default vhorariocontroller;
