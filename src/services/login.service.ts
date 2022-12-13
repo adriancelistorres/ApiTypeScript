@@ -1,4 +1,3 @@
-import { Docente } from "../entities/Docente";
 import { Usuario } from "../entities/Usuario";
 import { AppDataSource } from "./../databases/db";
 
