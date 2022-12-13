@@ -1,6 +1,6 @@
 export interface ILoginUsuario {
   idusua: number;
-  idemple: number;
+  iddocente: number;
   usuario: string;
   contrasena: string;
   estado: number;

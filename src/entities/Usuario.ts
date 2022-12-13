@@ -6,7 +6,7 @@ export class Usuario extends BaseEntity {
   idusua: number;
 
   @Column()
-  idemple: number;
+  iddocente: number;
 
   @Column()
   usuario: string;
