@@ -4,6 +4,7 @@ import {Vasistencia} from "../entities/Vasistencia"
 
 import {VhorarioDocente} from "../entities/VhorarioDocente"
 import { Vinasistencia } from "../entities/Vinasistencia"
+import { Vtardanza } from "../entities/Vtardanza"
 
 
 export const AppDataSource = new DataSource({
@@ -15,7 +16,7 @@ export const AppDataSource = new DataSource({
     database: "feyalegria",
     // synchronize: true,
     logging: false,
-    entities: [VhorarioDocente, Usuario,Vasistencia,Vinasistencia],
+    entities: [VhorarioDocente, Usuario,Vasistencia,Vinasistencia,Vtardanza],
     subscribers: [],
     migrations: [],
 })
