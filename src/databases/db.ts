@@ -1,4 +1,5 @@
 import {DataSource} from "typeorm"
+import { Asistencia } from "../entities/Asistencia"
 import { Usuario } from "../entities/Usuario"
 import {Vasistencia} from "../entities/Vasistencia"
 
@@ -16,7 +17,7 @@ export const AppDataSource = new DataSource({
     database: "feyalegria",
     // synchronize: true,
     logging: false,
-    entities: [VhorarioDocente, Usuario,Vasistencia,Vinasistencia,Vtardanza],
+    entities: [VhorarioDocente, Usuario,Vasistencia,Vinasistencia,Vtardanza,Asistencia],
     subscribers: [],
     migrations: [],
 })
