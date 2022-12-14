@@ -31,7 +31,7 @@ router.post("/login", _loginController.loginUser);
 
 router.post("/tardanza", _Tardanza.TardanzaDocente);
 router.post("/inasistencia", _Inasistencia.InasistenciaDocente);
-router.post("/asistencia", _Asistencia.AsistenciaDocente);
+router.get("/asistencia/:id", _Asistencia.AsistenciaDocente);
 
 router.post("/marcarasistencia", _Asistencia.createAsistencia);
 

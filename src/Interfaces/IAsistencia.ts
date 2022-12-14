@@ -7,3 +7,9 @@ export interface IAsistencia {
   qr: string;
   porcod: string;
 }
+
+export interface IAsisReq{
+  iddocente: number|undefined;
+  observacion: string|undefined;
+
+}

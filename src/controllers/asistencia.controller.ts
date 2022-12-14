@@ -8,9 +8,11 @@ class AsistenciaController {
   
     public async AsistenciaDocente(req: Request, res: Response) {
       try {
+        const id:number=parseInt(req.params.id);
+
         const asis = req.body;
         const service = new AsistenciaService();
-        const result = await service.asistencia(asis.iddocente, asis.observacion);
+        const result = await service.asistencia(id);
         // console.log("LOG RESULT", result);
         return res.json(result);
       } catch (error) {

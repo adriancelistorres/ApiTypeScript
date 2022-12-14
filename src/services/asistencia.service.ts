@@ -1,24 +1,33 @@
 import { AppDataSource } from "../databases/db";
 import { Asistencia } from "../entities/Asistencia";
-import { IAsistencia } from "../Interfaces/IAsistencia";
+import { IAsisReq, IAsistencia } from "../Interfaces/IAsistencia";
 
 class AsistenciaService {
     constructor() {}
   
-    public async asistencia(iddocente: number, observacion: string) {
-      console.log("LOGservice", iddocente, observacion);
-      observacion="asistencia"
+    public async asistencia(iddocente: number) {
+     
+      console.log("LOGservice", iddocente);
+      let observacion:String="asistencia"
       try {
+      const asistencias = await Asistencia.findOneBy({ iddocente:iddocente });
+      let respuesta: IAsisReq = {
+        iddocente:asistencias?.iddocente,
+        observacion:asistencias?.observacion
+      };
+
+      if (respuesta.observacion="asistencia"){
         const data = await AppDataSource.createQueryBuilder()
-          .select("asis")
-          .from(Asistencia, "asis")
-          .where("asis.iddocente = :iddocente", { iddocente })
-          .andWhere("asis.observacion = :observacion", { observacion })
-          .getMany();
-        // console.log("LOG1", data);
-        
-        return data;
-        
+        .select("asis")
+        .from(Asistencia, "asis")
+        .where("asis.iddocente = :iddocente", { iddocente })
+        .andWhere("asis.observacion = :observacion", { observacion })
+        .getMany();
+      // console.log("LOG1", data);
+      
+      return data;
+      }
+
       } catch (error) {
         if (error instanceof Error) {
           return Promise.reject(" does not exist ");
