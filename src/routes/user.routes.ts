@@ -1,4 +1,6 @@
 import { Router } from "express";
+import AsistenciaController from "../controllers/asistencia.controller";
+import InasistenciaController from "../controllers/inasistencia.controller";
 import LoginController from "../controllers/login.controller";
 import TardanzaController from "../controllers/tardanza.controller";
 import vasistenciacontroller from "../controllers/vasistencia.controller";
@@ -13,6 +15,10 @@ const _InasistenciaController = new vinasistenciacontroller();
 const _TardanzaController = new vtardanzacontroller();
 
 const _Tardanza= new TardanzaController();
+const _Inasistencia= new InasistenciaController();
+
+const _Asistencia= new AsistenciaController();
+const _MarcarAsistencia= new AsistenciaController();
 
 
 const router = Router();
@@ -24,6 +30,10 @@ router.get("/vtardanza", _TardanzaController.getTardanza);
 router.post("/login", _loginController.loginUser);
 
 router.post("/tardanza", _Tardanza.TardanzaDocente);
+router.post("/inasistencia", _Inasistencia.InasistenciaDocente);
+router.post("/asistencia", _Asistencia.AsistenciaDocente);
+
+router.post("/marcarasistencia", _Asistencia.createAsistencia);
 
 
 export default router;

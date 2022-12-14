@@ -1,18 +1,18 @@
 import { AppDataSource } from "../databases/db";
 import { Asistencia } from "../entities/Asistencia";
 
-class TardanzaService {
+class InasistenciaService {
     constructor() {}
   
-    public async tardanza(iddocente: number, observacion: string) {
+    public async inasistencia(iddocente: number, observacion: string) {
       console.log("LOGservice", iddocente, observacion);
-      observacion="tardanza"
+      observacion="inasistencia"
       try {
         const data = await AppDataSource.createQueryBuilder()
-          .select("asis")
-          .from(Asistencia, "asis")
-          .where("asis.iddocente = :iddocente", { iddocente })
-          .andWhere("asis.observacion = :observacion", { observacion })
+          .select("inasis")
+          .from(Asistencia, "inasis")
+          .where("inasis.iddocente = :iddocente", { iddocente })
+          .andWhere("inasis.observacion = :observacion", { observacion })
           .getMany();
         // console.log("LOG1", data);
         return data;
@@ -25,5 +25,4 @@ class TardanzaService {
     }
   }
 
-export default TardanzaService
-  
+  export default InasistenciaService

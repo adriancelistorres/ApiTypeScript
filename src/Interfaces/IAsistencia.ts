@@ -1,4 +1,4 @@
-export interface ITardanza {
+export interface IAsistencia {
   idasistencia: number;
   iddocente: number;
   observacion: string;
