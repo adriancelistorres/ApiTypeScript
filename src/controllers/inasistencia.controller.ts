@@ -6,9 +6,12 @@ class InasistenciaController {
   
     public async InasistenciaDocente(req: Request, res: Response) {
       try {
+        const id:number=parseInt(req.params.id);
+
+
         const inasis = req.body;
         const service = new InasistenciaService();
-        const result = await service.inasistencia(inasis.iddocente, inasis.observacion);
+        const result = await service.inasistencia(id);
         // console.log("LOG RESULT", result);
         return res.json(result);
       } catch (error) {

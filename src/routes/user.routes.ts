@@ -29,8 +29,8 @@ router.get("/vinasistencia", _InasistenciaController.getInasistencia);
 router.get("/vtardanza", _TardanzaController.getTardanza);
 router.post("/login", _loginController.loginUser);
 
-router.post("/tardanza", _Tardanza.TardanzaDocente);
-router.post("/inasistencia", _Inasistencia.InasistenciaDocente);
+router.get("/tardanza/:id", _Tardanza.TardanzaDocente);
+router.get("/inasistencia/:id", _Inasistencia.InasistenciaDocente);
 router.get("/asistencia/:id", _Asistencia.AsistenciaDocente);
 
 router.post("/marcarasistencia", _Asistencia.createAsistencia);

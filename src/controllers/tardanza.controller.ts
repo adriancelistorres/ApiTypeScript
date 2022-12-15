@@ -6,9 +6,11 @@ class TardanzaController {
   
     public async TardanzaDocente(req: Request, res: Response) {
       try {
+        const id:number=parseInt(req.params.id);
+
         const tard = req.body;
         const service = new TardanzaService();
-        const result = await service.tardanza(tard.iddocente, tard.observacion);
+        const result = await service.tardanza(id);
         // console.log("LOG RESULT", result);
         return res.json(result);
       } catch (error) {
