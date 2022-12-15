@@ -13,7 +13,8 @@ import {
 export class VhorarioDocente extends BaseEntity {
   @PrimaryGeneratedColumn()
   idhorario: number;
-
+  @Column()
+  iddocente: number;
   @Column()
   nombcurso: string;
 
@@ -21,10 +22,10 @@ export class VhorarioDocente extends BaseEntity {
   nomaula: string;
 
   @Column()
-  hora_inicio: number;
+  hora_inicio: string;
 
   @Column()
-  hora_fin: number;
+  hora_fin: string;
 
  
 

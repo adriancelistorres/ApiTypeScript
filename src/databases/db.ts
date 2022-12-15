@@ -17,7 +17,7 @@ export const AppDataSource = new DataSource({
     database: "feyalegria",
     // synchronize: true,
     logging: false,
-    entities: [VhorarioDocente, Usuario,Vasistencia,Vinasistencia,Vtardanza,Asistencia],
+    entities: [VhorarioDocente, Usuario,Vasistencia,Vinasistencia,Vtardanza,Asistencia,],
     subscribers: [],
     migrations: [],
 })

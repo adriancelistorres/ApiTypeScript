@@ -23,7 +23,7 @@ const _MarcarAsistencia= new AsistenciaController();
 
 const router = Router();
 
-router.get("/vhorariodocente", _HorarioController.getHorarioDocente);
+// router.get("/vhorariodocente", _HorarioController.getHorarioDocente);
 router.get("/vasistencia", _AsistenciaController.getAsistencia);
 router.get("/vinasistencia", _InasistenciaController.getInasistencia);
 router.get("/vtardanza", _TardanzaController.getTardanza);
@@ -34,6 +34,9 @@ router.get("/inasistencia/:id", _Inasistencia.InasistenciaDocente);
 router.get("/asistencia/:id", _Asistencia.AsistenciaDocente);
 
 router.post("/marcarasistencia", _Asistencia.createAsistencia);
+
+router.get("/horariodocente/:id", _HorarioController.getOneHorario);
+
 
 
 export default router;
